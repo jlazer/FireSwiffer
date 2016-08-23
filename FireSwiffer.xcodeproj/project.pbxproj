@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		BAEC440877688D461F84C813 /* Pods_FireSwiffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44CBAC1B4BA4761E1063B937 /* Pods_FireSwiffer.framework */; };
 		F648EAE41D6CF47F00D2A13A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F648EAE31D6CF47F00D2A13A /* AppDelegate.swift */; };
-		F648EAE61D6CF47F00D2A13A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F648EAE51D6CF47F00D2A13A /* ViewController.swift */; };
 		F648EAE91D6CF47F00D2A13A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F648EAE71D6CF47F00D2A13A /* Main.storyboard */; };
 		F648EAEB1D6CF47F00D2A13A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F648EAEA1D6CF47F00D2A13A /* Assets.xcassets */; };
 		F648EAEE1D6CF47F00D2A13A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F648EAEC1D6CF47F00D2A13A /* LaunchScreen.storyboard */; };
 		F648EAF61D6CF52900D2A13A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F648EAF51D6CF52900D2A13A /* GoogleService-Info.plist */; };
+		F648EAF81D6CF95800D2A13A /* SweetsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F648EAF71D6CF95800D2A13A /* SweetsTableViewController.swift */; };
+		F648EAFA1D6CFA1100D2A13A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F648EAF91D6CFA1100D2A13A /* User.swift */; };
+		F648EAFC1D6CFB2B00D2A13A /* Sweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F648EAFB1D6CFB2B00D2A13A /* Sweet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,12 +23,14 @@
 		44CBAC1B4BA4761E1063B937 /* Pods_FireSwiffer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireSwiffer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F648EAE01D6CF47F00D2A13A /* FireSwiffer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireSwiffer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F648EAE31D6CF47F00D2A13A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F648EAE51D6CF47F00D2A13A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F648EAE81D6CF47F00D2A13A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F648EAEA1D6CF47F00D2A13A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F648EAED1D6CF47F00D2A13A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F648EAEF1D6CF47F00D2A13A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F648EAF51D6CF52900D2A13A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F648EAF71D6CF95800D2A13A /* SweetsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetsTableViewController.swift; sourceTree = "<group>"; };
+		F648EAF91D6CFA1100D2A13A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F648EAFB1D6CFB2B00D2A13A /* Sweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sweet.swift; sourceTree = "<group>"; };
 		FB9A67460CAA33EBFD5BC4AF /* Pods-FireSwiffer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireSwiffer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FireSwiffer/Pods-FireSwiffer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,7 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				F648EAE31D6CF47F00D2A13A /* AppDelegate.swift */,
-				F648EAE51D6CF47F00D2A13A /* ViewController.swift */,
+				F648EAFD1D6CFD6C00D2A13A /* Model */,
+				F648EAF71D6CF95800D2A13A /* SweetsTableViewController.swift */,
 				F648EAE71D6CF47F00D2A13A /* Main.storyboard */,
 				F648EAEA1D6CF47F00D2A13A /* Assets.xcassets */,
 				F648EAEC1D6CF47F00D2A13A /* LaunchScreen.storyboard */,
@@ -89,6 +94,15 @@
 				F648EAF51D6CF52900D2A13A /* GoogleService-Info.plist */,
 			);
 			path = FireSwiffer;
+			sourceTree = "<group>";
+		};
+		F648EAFD1D6CFD6C00D2A13A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F648EAF91D6CFA1100D2A13A /* User.swift */,
+				F648EAFB1D6CFB2B00D2A13A /* Sweet.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,8 +228,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F648EAE61D6CF47F00D2A13A /* ViewController.swift in Sources */,
+				F648EAF81D6CF95800D2A13A /* SweetsTableViewController.swift in Sources */,
 				F648EAE41D6CF47F00D2A13A /* AppDelegate.swift in Sources */,
+				F648EAFC1D6CFB2B00D2A13A /* Sweet.swift in Sources */,
+				F648EAFA1D6CFA1100D2A13A /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
