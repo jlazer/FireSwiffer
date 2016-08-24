@@ -5,6 +5,7 @@
 //  Created by Justin Lazarski on 8/23/16.
 //  Copyright © 2016 Justin Lazarski. All rights reserved.
 //
+// Justin Lazarski
 
 import UIKit
 import FirebaseDatabase
@@ -66,7 +67,7 @@ class SweetsTableViewController: UITableViewController {
             
             FIRAuth.auth()?.createUserWithEmail(emailTextField.text!, password: passwordTextField.text!, completion: { (user:FIRUser?, error:NSError?) in
                 if error != nil {
-                print(error?.description)
+                    print(error?.description)
                 }
                 
                 
@@ -97,7 +98,7 @@ class SweetsTableViewController: UITableViewController {
         sweetAlert.addTextFieldWithConfigurationHandler { (textField:UITextField) in
             textField.placeholder = "Your Sweet"
         }
-        sweetAlert.addAction(UIAlertAction(title: "Send", style: .Default, handler: { (action:UIAlertAction) in
+        /*sweetAlert.addAction(UIAlertAction(title: "Send", style: .Default, handler: { (action:UIAlertAction) in
             if let sweetContent = sweetAlert.textFields?.first?.text {
                 let sweet = Sweet(content: sweetContent, addedByUser: "Justin Lazarski")
                 
@@ -105,39 +106,57 @@ class SweetsTableViewController: UITableViewController {
                 
                 sweetRef.setValue(sweet.toAnyObject())
             }
-        }))
-        self.presentViewController(sweetAlert, animated: true, completion: nil)
-        
-    }
-    
-    // MARK: - Table view data source
-    
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sweets.count
-    }
-    
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        
-        let sweet = sweets[indexPath.row]
-        cell.textLabel?.text = sweet.content
-        cell.detailTextLabel?.text = sweet.addedByUser
-        return cell
-        
-        
-    }
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            let sweet = sweets[indexPath.row]
             
-            sweet.itemRef?.removeValue()
+              }))*/
+        
+        
+        let sendAction = UIAlertAction(title: "Send", style: .Default) { (action:UIAlertAction) in
+            if let sweetContent = sweetAlert.textFields?.first?.text {
+                let sweet = Sweet(content: sweetContent, addedByUser: "Justin Lazarski")
+                
+                let sweetRef = self.dbRef.child(sweetContent.lowercaseString)
+                
+                sweetRef.setValue(sweet.toAnyObject())
+            }
+            
         }
+
+        let cancelAction = UIAlertAction(title: "Cancel",
+                                         style: .Default) { (action: UIAlertAction) -> Void in
+        }
+        sweetAlert.addAction(sendAction)
+        sweetAlert.addAction(cancelAction)
+        presentViewController(sweetAlert, animated: true, completion: nil)
+}
+
+// MARK: - Table view data source
+
+override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    return 1
+}
+
+override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return sweets.count
+}
+
+
+override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+    
+    let sweet = sweets[indexPath.row]
+    cell.textLabel?.text = sweet.content
+    cell.detailTextLabel?.text = sweet.addedByUser
+    return cell
+    
+    
+}
+override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    if editingStyle == .Delete {
+        let sweet = sweets[indexPath.row]
+        
+        sweet.itemRef?.removeValue()
     }
-    
-    
+}
+
+
 }
